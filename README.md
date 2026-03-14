@@ -100,7 +100,32 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-## created the pod in developer-namespace in the developer instance 
+## in developer instance give the aws configure - access key and secret access key 
+
+## kubectl installation in linux 
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+
+kubectl version
+```
+
+```
+aws configure
+```
+```
+aws eks --region us-east-1 update-kubeconfig --name mycluster
+```
+```
+kubectl get nodes
+```
+## it will helps to access the developer instance 
+
+
+## created the pod in developer-namespace in the developer instance sample testing 
 
 ```
 apiVersion: v1
