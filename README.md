@@ -20,3 +20,5 @@ aws eks --region us-east-1 update-kubeconfig --name mycluster
 ```
 kubectl get nodes
 ```
+
+### Created the 5 instances and the 2 is for the EKS and the other 3 is the accessing the developer and tester and the root 
