@@ -52,5 +52,19 @@ kubectl get nodes
 kubectl edit configmap aws-auth -n kube-system
 ```
 
+## paste under the map roles
+
+```
+mapUsers: |
+    - userarn: arn:aws:iam::128913199644:user/developer
+      username: developer
+      groups:
+        - developer-grp
+    - userarn: arn:aws:iam::128913199644:user/tester
+      username: tester
+      groups:
+        - tester-grp
+```
+
 
 
