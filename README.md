@@ -49,7 +49,7 @@ kubectl get nodes
 ## there will be one config file 
 
 ```
-kubectl edit configmap aws-auth -n kubesystem
+kubectl edit configmap aws-auth -n kube-system
 ```
 
 
