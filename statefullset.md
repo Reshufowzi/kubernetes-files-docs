@@ -93,4 +93,65 @@ df -h
 ls /var/lib/mysql
 ```
 
+```
+mysql-stateful-0
+mysql-stateful-1
+```
+### DNS names:
+
+```
+mysql-stateful-0.mysql-headless.default.svc.cluster.local
+mysql-stateful-1.mysql-headless.default.svc.cluster.local
+
+```
+
+## Applications connect using these names.
+
+```
+Example app connection:
+```
+```
+Host=mysql-stateful-0.mysql-headless
+Port=3306
+User=root
+Password=root123
+
+```
+### How communication happens:
+
+```
+Application Pod
+      ↓
+Service DNS
+      ↓
+StatefulSet Pod
+      ↓
+MySQL running inside container
+
+```
+```
+Why StatefulSet needs Headless Service?
+
+Because StatefulSet gives:
+
+Stable pod names
+Stable network identity
+Stable storage
+
+Without headless service, pods get random IPs only.
+
+```
+```
+nslookup mysql-stateful-0.mysql-headless
+```
+### You’ll see pod IP.
+
+### install mysql client and connect:
+
+```
+mysql -h mysql-stateful-0.mysql-headless -u root -p
+
+```
+
+
 
