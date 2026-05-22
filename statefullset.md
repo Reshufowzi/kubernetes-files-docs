@@ -82,3 +82,15 @@ mysql-storage-mysql-stateful-0
 mysql-storage-mysql-stateful-1
 mysql-storage-mysql-stateful-2
 ```
+### You can verify inside pod: in eks access machine 
+```
+kubectl exec -it mysql-stateful-0 -- bash
+```
+```
+df -h
+```
+```
+ls /var/lib/mysql
+```
+
+
