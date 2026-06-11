@@ -68,7 +68,7 @@ kubectl apply -f mysql-stateful.yaml
 kubectl get pods
 ```
 ```
-kubectl exec -it mysql-stateful-0 -- mysql -uroot -p
+kubectl exec -it mysql-stateful-0 -- mysql -u root -p
 ```
 ```
 root123
