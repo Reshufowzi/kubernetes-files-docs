@@ -73,6 +73,21 @@ spec:
           ports:
             - containerPort: 80
 ```
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 80  # Pod container port
+      
+```
 # Daemontset
 ```
 apiVersion: apps/v1
@@ -95,6 +110,21 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+```
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-daemon-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 80  # Pod container port
+      nodePort: 30007 # NodePort (must be between 30000-32767)
 ```
 # To see most of the running resources in Kubernetes:
 ```
